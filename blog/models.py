@@ -2,19 +2,19 @@ from django.db import models
 
 # Create your models here.
 class Post(models.Model):
-    author = models.CharField(max_length=255,null=True)
-    # image = 
+    # image 
+    # author 
     title = models.CharField(max_length=255)
     content = models.TextField()
-    category = models.CharField(max_length=255,null=True)
-    tag = models.CharField(max_length=255,null=True)
-    counted_view = models.IntegerField(default=0)
-    published_date = models.DateTimeField(auto_now_add=True)
+    # tag 
+    # category 
+    counted_views = models.IntegerField(default=0)
+    status = models.BooleanField(default=False)
+    published_date = models.DateTimeField(null=True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
-
-class Tag(models.Model):
-    name = models.CharField(max_length=255)
-
-class Category(models.Model):
-    name = models.CharField(max_length=255)
+    class Meta:
+        ordering = ['-created_date']
+        
+    def __str__(self):
+        return self.title
