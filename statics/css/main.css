@@ -3381,18 +3381,32 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .post-content-area .single-post .meta-details {
-  text-align: right;
+  text-align: left;
   margin-top: 35px;
+}
+.post-content-area .single-post .meta-details .first-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+
 }
 
 @media (max-width: 767px) {
   .post-content-area .single-post .meta-details {
     text-align: left;
   }
+  .post-content-area .single-post .meta-details .first-row {
+    flex-direction: column;
+  }
+  .post-content-area .single-post .meta-details .tags {
+    margin-bottom: 5px;
+  }
 }
 
 .post-content-area .single-post .meta-details .tags {
-  margin-bottom: 30px;
+  
 }
 
 .post-content-area .single-post .meta-details .tags li {
