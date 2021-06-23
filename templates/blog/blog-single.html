@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load blog_tags %}
+
 {% block content %}
 
 <!-- start banner Area -->
@@ -238,8 +240,8 @@
 					
 					{% include 'blog/blog-tags.html' %}
 
-					{% include 'blog/blog-popular-posts.html'%}													
-
+					{% latestposts %}											
+					
 					{% include 'blog/blog-ads.html'%}
 				
 				</div>
@@ -247,5 +249,6 @@
 		</div>
 	</div>
 </section>
+
 <!-- End post-content Area -->
 {% endblock %}

@@ -2,41 +2,17 @@
 <div class="single-sidebar-widget popular-post-widget">
     <h4 class="popular-title">Popular Posts</h4>
     <div class="popular-post-list">
+        {% for post in posts %}
         <div class="single-post-list d-flex flex-row align-items-center">
             <div class="thumb">
-                <img class="img-fluid" src="{% static 'img/blog/pp1.jpg' %}" alt="">
+                <img class="img-fluid" src="{{post.image.url}}" alt="">
             </div>
             <div class="details">
-                <a href="blog-single.html"><h6>Space The Final Frontier</h6></a>
-                <p>02 Hours ago</p>
+                <a href="{% url 'blog:single' pid=post.id %}"><h6>{{post.title}}</h6></a>
+                <p>{{post.published_date|date:"d M Y"}}</p>
             </div>
         </div>
-        <div class="single-post-list d-flex flex-row align-items-center">
-            <div class="thumb">
-                <img class="img-fluid" src="{% static 'img/blog/pp2.jpg' %}" alt="">
-            </div>
-            <div class="details">
-                <a href="blog-single.html"><h6>The Amazing Hubble</h6></a>
-                <p>02 Hours ago</p>
-            </div>
-        </div>
-        <div class="single-post-list d-flex flex-row align-items-center">
-            <div class="thumb">
-                <img class="img-fluid" src="{% static 'img/blog/pp3.jpg' %}" alt="">
-            </div>
-            <div class="details">
-                <a href="blog-single.html"><h6>Astronomy Or Astrology</h6></a>
-                <p>02 Hours ago</p>
-            </div>
-        </div>
-        <div class="single-post-list d-flex flex-row align-items-center">
-            <div class="thumb">
-                <img class="img-fluid" src="{% static 'img/blog/pp4.jpg' %}" alt="">
-            </div>
-            <div class="details">
-                <a href="blog-single.html"><h6>Asteroids telescope</h6></a>
-                <p>02 Hours ago</p>
-            </div>
-        </div>															
+        {% endfor %}
+														
     </div>
 </div>
