@@ -109,7 +109,7 @@
 										{{post.content}}
 										
 									</p>
-									<a href="#" class="primary-btn">View More</a>
+									<a href="{% url 'blog:single' pid=post.id  %}" class="primary-btn">View More</a>
 								</div>
 							</div>
 							{% endfor %}								

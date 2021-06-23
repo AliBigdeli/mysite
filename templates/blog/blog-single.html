@@ -34,11 +34,11 @@
 					<div class="col-lg-12  meta-details">
 
 						<div class="user-details row">
-							<p class="user-name col-lg-3 col-sm-6"><a href="#">Mark wiens</a> <span
+							<p class="user-name col-lg-3 col-sm-6"><a href="#">{{post.author.get_full_name}}</a> <span
 									class="lnr lnr-user"></span></p>
-							<p class="date col-lg-3 col-sm-6"><a href="#">12 Dec, 2017</a> <span
+							<p class="date col-lg-3 col-sm-6"><a href="#">{{post.published_date}}</a> <span
 									class="lnr lnr-calendar-full"></span></p>
-							<p class="view col-lg-3 col-sm-6"><a href="#">1.2M Views</a> <span
+							<p class="view col-lg-3 col-sm-6"><a href="#">{{post.counted_views}} Views</a> <span
 									class="lnr lnr-eye"></span></p>
 							<p class="comments col-lg-3 col-sm-6"><a href="#">06 Comments</a> <span
 									class="lnr lnr-bubble"></span></p>
@@ -46,9 +46,9 @@
 
 						</div>
 					</div>
-					<div class="col-lg-9 col-md-9">
+					<div class="col-lg-12 col-md-12">
 						<h3 class="mt-20 mb-20">{{post.title}}</h3>
-						<p class="excert">
+						<p>
 							{{post.content}}
 						</p>
 						<br>
