@@ -6,7 +6,7 @@
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="{% static 'img/fav.png">
+    <link rel="shortcut icon" href="{% static 'img/fav.png' %}">
     <!-- Author Meta -->
     <meta name="author" content="colorlib">
     <!-- Meta Description -->
@@ -137,14 +137,15 @@
                             For business professionals caught between high OEM price and mediocre print and graphic
                             output.
                         </p>
-                        <div id="mc_embed_signup">
-                            <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                method="get" class="subscription relative">
+                        <div>
+                            <form
+                                action="{% url 'website:newsletter' %}"
+                                method="post" class="subscription relative">
+                                {% csrf_token %}
                                 <div class="input-group d-flex flex-row">
-                                    <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''"
+                                    <input name="email" placeholder="Email Address" onfocus="this.placeholder = ''"
                                         onblur="this.placeholder = 'Email Address '" required="" type="email">
-                                    <button class="btn bb-btn"><span class="lnr lnr-location"></span></button>
+                                    <button class="btn bb-btn" type='submit'><span class="lnr lnr-location"></span></button>
                                 </div>
                                 <div class="mt-10 info"></div>
                             </form>
