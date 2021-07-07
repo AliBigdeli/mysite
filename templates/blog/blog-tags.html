@@ -1,17 +1,9 @@
 <div class="single-sidebar-widget tag-cloud-widget">
     <h4 class="tagcloud-title">Tag Clouds</h4>
     <ul>
-        <li><a href="#">Technology</a></li>
-        <li><a href="#">Fashion</a></li>
-        <li><a href="#">Architecture</a></li>
-        <li><a href="#">Fashion</a></li>
-        <li><a href="#">Food</a></li>
-        <li><a href="#">Technology</a></li>
-        <li><a href="#">Lifestyle</a></li>
-        <li><a href="#">Art</a></li>
-        <li><a href="#">Adventure</a></li>
-        <li><a href="#">Food</a></li>
-        <li><a href="#">Lifestyle</a></li>
-        <li><a href="#">Adventure</a></li>
+        {% for tag in post.tags.all %}
+        <li><a href="{% url 'blog:tag' tag_name=tag.name %}">{{tag.name}}</a></li>
+        {% endfor %}
+        
     </ul>
 </div>

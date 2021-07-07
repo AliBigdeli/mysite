@@ -1,3 +1,4 @@
+{% load humanize %}
 {% load static %}
 <div class="single-sidebar-widget popular-post-widget">
     <h4 class="popular-title">Popular Posts</h4>
@@ -8,8 +9,8 @@
                 <img class="img-fluid" src="{{post.image.url}}" alt="">
             </div>
             <div class="details">
-                <a href="{% url 'blog:single' pid=post.id %}"><h6>{{post.title}}</h6></a>
-                <p>{{post.published_date|date:"d M Y"}}</p>
+                <a href="{% url 'blog:single' pid=post.id %}"><h6>{{post.title}}</h6></a>                
+                <p>{{post.published_date|naturaltime}}</p>
             </div>
         </div>
         {% endfor %}
