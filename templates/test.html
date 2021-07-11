@@ -9,12 +9,6 @@
 </head>
 <body>
     
-    <form action="{% url 'website:test'%}" method="post">
-        {% csrf_token %}
-
-        {{form.as_p  }}
-        <button type='submit'>submit</button>
-    </form>
-
+    <p> now that you are logged in you can see this </p>
 </body>
 </html>

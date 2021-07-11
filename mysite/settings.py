@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'taggit',    
     'django_extensions',
     'website.apps.WebsiteConfig',
-    'blog'
+    'blog',
+    'accounts'
 
 
 ]

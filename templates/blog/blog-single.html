@@ -143,6 +143,10 @@
 						<form method="post" action='{% url "blog:single" pid=post.id %}'>
 						{% csrf_token %}
 						<input type="hidden" name="post" value={{post.id}}>
+						{% if request.user.is_authenticated %}
+						<input type="hidden" name="name" value={{request.user.first_name}}>
+						<input type="hidden" name="email" value={{request.user.email}}>
+						{% else %}
 						<div class="form-group form-inline">
 							<div class="form-group col-lg-6 col-md-12 name">
 								<input type="text" class="form-control" name="name" placeholder="Enter Name"
@@ -153,6 +157,7 @@
 									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
 							</div>
 						</div>
+						{% endif %}
 						<div class="form-group">
 							<input type="text" class="form-control" name="subject" placeholder="Subject"
 								onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'">
