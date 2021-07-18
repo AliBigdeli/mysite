@@ -7,7 +7,6 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 # Create your views here.
 
-
 def blog_view(request,**kwargs):
     posts = Post.objects.filter(status=1).order_by('-published_date')
     if kwargs.get('cat_name') != None:
@@ -37,10 +36,12 @@ def blog_single(request,pid):
             messages.add_message(request,messages.ERROR,'your comment didnt submiter')
     posts = Post.objects.filter(status=1)
     post = get_object_or_404(posts,pk=pid)
+    
     if not post.login_require:
         comments = Comment.objects.filter(post=post.id,approved=True)
         form = CommentForm()
         context = {'post':post,'comments':comments,'form':form}
+
         return render(request,'blog/blog-single.html',context)
     else:
         return HttpResponseRedirect(reverse('accounts:login'))

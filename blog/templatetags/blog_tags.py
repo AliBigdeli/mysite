@@ -57,3 +57,8 @@ def excerpt_with_ptag_spacing(value, arg):
 
     # other usage: return Truncator(value).words(length, html=True, truncate=' see more')
     return Truncator(value).words(limit)
+
+@register.inclusion_tag('blog/blog-index-latestposts.html')
+def index_latestposts(arg=6):
+    posts = Post.objects.filter(status=1).order_by('-published_date')[:arg]
+    return {'posts':posts}

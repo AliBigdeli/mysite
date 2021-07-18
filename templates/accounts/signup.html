@@ -17,24 +17,22 @@
     <link rel="stylesheet" href="{% static 'css/signin.css' %}">
 </head>
 
-<body class="text-center">
+<body class="text-center" style="background-color: gainsboro;">
     <form class="form-signin" method="post" action="{% url 'accounts:signup' %}">
         {% csrf_token %}
-        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72"
-            height="72">
+        <img class="m-5" src="{% static 'img/logo-invert.png' %}" alt="" width="220"
+            height="50">
         <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
-        <label for="inputEmail" class="sr-only">Username</label>
-        <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password1" class="form-control" placeholder="Password" required>        
-        <input type="password" name="password2" class="form-control" placeholder="Confirm Password" required>
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+        
+        <input type="text" name="username" class="form-control mt-2" placeholder="Username" required autofocus>
+
+        <input type="password" name="password1" class="form-control mt-2" placeholder="Password" required>        
+        
+        <input type="password" name="password2" class="form-control mt-2" placeholder="Confirm Password" required>
+        
+        <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Sign up</button>
+        <p class="mt-3 mb-2"><a href="{% url 'accounts:login' %}" >Already have an account?</a></p>
+        <p class="mt-5 mb-3 text-muted">&copy; 2021-2023</p>
     </form>
 </body>
 

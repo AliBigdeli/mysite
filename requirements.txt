@@ -1,5 +1,11 @@
 Django>3.2,<3.3
-asgiref
-pytz
-sqlparse
 pillow
+django-multi-captcha-admin
+django-robots
+django-simple-captcha
+django-summernote
+django-taggit
+django-utils-six
+Faker
+django-compressor
+django-debug-toolbar

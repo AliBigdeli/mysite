@@ -25,6 +25,9 @@ SECRET_KEY = 'django-insecure-o-k&e=42c8kvzz+58m96on3-u!ea-x7v*yv*na3e!o^r@po-6)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+
+
 ALLOWED_HOSTS = []
 
 
@@ -45,15 +48,13 @@ INSTALLED_APPS = [
     'captcha',
     'django_summernote',
     'robots',
-    'debug_toolbar',
     'taggit',    
-    'django_extensions',
-    'website.apps.WebsiteConfig',
+    'accounts',
+    'website',
     'blog',
-    'accounts'
-
-
 ]
+
+
 
 # sites framework
 SITE_ID = 2
@@ -63,7 +64,7 @@ ROBOTS_USE_HOST = True
 ROBOTS_USE_SITEMAP = True
 
 # summernote configs
-UMMERNOTE_THEME = 'bs4'
+SUMMERNOTE_THEME = 'bs4'
 SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode, default
     'iframe': True,
@@ -106,7 +107,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -180,20 +180,18 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 STATICFILES_DIRS = [
     BASE_DIR / "statics",
 ]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-INTERNAL_IPS = [
-    '127.0.0.1',
-]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
