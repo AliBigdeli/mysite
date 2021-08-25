@@ -9,3 +9,4 @@ django-utils-six
 Faker
 django-compressor
 django-debug-toolbar
+mysqlclient
