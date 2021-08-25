@@ -54,7 +54,20 @@ then installing the requirements:
 ```Shell
 pip install -r requirements.txt
 ```
+### Running the Project
+in order to run the project you need to use either ways below
 
+default and development settings
+```Shell
+python manage.py runserver 
+#or
+python manage.py runserver 0.0.0.0:8000 --settings=mysite.setting.dev
+```
+production settings
+```Shell
+python manage.py runserver 0.0.0.0:8000 --settings=mysite.setting.prod
+```
+<strong>Note:<strong> if you want to change the settings permanently to prod you can modify the settings in enviroment varibale inside the manage.py 
 ### Project Model Schema :
 this is the model schema have been used in this project:
 ![drawSQL-export-2021-08-23_23_26](https://user-images.githubusercontent.com/29748439/130503854-cefc63a6-1466-4164-825a-9f313d521059.png)
