@@ -67,7 +67,7 @@ production settings
 ```Shell
 python manage.py runserver 0.0.0.0:8000 --settings=mysite.setting.prod
 ```
-<strong>Note:<strong> if you want to change the settings permanently to prod you can modify the settings in enviroment varibale inside the manage.py 
+<strong>Note:</strong> if you want to change the settings permanently to prod you can modify the settings in enviroment varibale inside the manage.py and need to use dokcer or install the mysql directly on your machine
 ### Project Model Schema :
 this is the model schema have been used in this project:
 ![drawSQL-export-2021-08-23_23_26](https://user-images.githubusercontent.com/29748439/130503854-cefc63a6-1466-4164-825a-9f313d521059.png)
