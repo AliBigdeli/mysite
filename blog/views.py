@@ -37,7 +37,7 @@ def blog_single(request,pid):
     posts = Post.objects.filter(status=1)
     post = get_object_or_404(posts,pk=pid)
     
-    if not post.login_require:
+    if not post.login_require or request.user.is_authenticated:
         comments = Comment.objects.filter(post=post.id,approved=True)
         form = CommentForm()
         context = {'post':post,'comments':comments,'form':form}
